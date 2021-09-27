@@ -26,7 +26,7 @@ function getUserInfo() {
             if (res.status !== 0) {
                 return layui.layer.msg('获取用户信息失败！')
             }
-            console.log(res);
+            // console.log(res);
             renderAvatar(res.data);
         },
         /*         complete: function (res) {
@@ -42,7 +42,7 @@ function getUserInfo() {
 
 function renderAvatar(user) {
     var name = user.nickname || user.username;
-    $(".welcome").html("你好&nbsp;&nbsp;" + name);
+    $("#welcome").html("你好&nbsp;&nbsp;" + name);
 
     if (user.user_pic !== null) {
         $('.layui-nav-img').attr("src", user.user_pic).show();
